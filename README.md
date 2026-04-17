@@ -154,3 +154,10 @@ Feedback, issues, and pull requests are welcome.
 | File | Description |
 |---|---|
 | `spec.md` | Full specification |
+| `example/movies.json` | Dataset — 80 films with genre, tags, score, and synopsis |
+| `example/api/index.php` | JSON API — genre, decade, director, score, tag, and full-text filters |
+| `example/index.php` | Browser list view — filterable, sortable film table |
+| `example/movie.php` | Browser detail view — single film page |
+| `example/context.txt` | Root context file for the example site |
+| `example/api/context.txt` | API context file describing all endpoints and filters |
+| `example/style/context.txt` | Style guide — colours, badges, and table layout |
