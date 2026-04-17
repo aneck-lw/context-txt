@@ -192,8 +192,11 @@ Response fields:
 ## Style context.txt
 
 A site may provide a style guide at `/style/context.txt` to give AI agents a
-visual starting point when rendering data for a human reader. These are
-defaults — the user receiving the output is always free to ask for changes.
+visual starting point when rendering data as HTML for a human reader. The style
+guide only applies when the agent produces HTML output — in plain-text or
+Markdown responses there is nothing to apply it to. Users should ask explicitly
+for an HTML page when they want styled output. These are defaults — the user
+receiving the output is always free to ask for changes.
 
 ### Structure
 

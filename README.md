@@ -104,9 +104,9 @@ For sites where even the API structure is sensitive, `context.txt` itself can be
 
 ## Style guide
 
-A `style/context.txt` gives AI agents a visual starting point when rendering data for a human. Colours, typography, badge design, table layout — the site owner defines the defaults, and the user can always ask for changes.
+A `style/context.txt` gives AI agents a visual starting point when rendering data as **HTML**. Colours, typography, badge design, table layout — the site owner defines the defaults, and the user can always ask for changes.
 
-This means a user asking *"show me all sci-fi films from the 80s"* gets a table that looks like it belongs on the site, not whatever default styles the AI invents.
+The style guide only takes effect when the agent produces HTML output. In plain-text or Markdown chat responses, there is nothing to apply it to. To get styled output, ask the agent explicitly for an HTML page — see the explicit prompt example below.
 
 ---
 
@@ -157,6 +157,10 @@ A skill-based request works the same way:
 If the agent does not apply the style guide automatically, a more explicit prompt works better:
 
 > Read https://context-txt.onrender.com/context.txt and https://context-txt.onrender.com/style/context.txt. Show me all sci-fi films from the 1980s with an IMDb score above 8.0 as a self-contained HTML page. Use the exact colours, badge design, and table layout from the style guide. Output only the HTML — no explanation or commentary.
+
+### Prerequisite: URL fetching
+
+These prompts require the agent to fetch URLs. Not all AI interfaces enable this by default — some restrict outbound HTTP requests entirely. Before trying these prompts, make sure URL fetching or web search is active in your AI tool. Each provider has its own way to enable it: check your provider's documentation or settings.
 
 ---
 
