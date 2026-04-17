@@ -1,6 +1,6 @@
 Options -Indexes
 RewriteEngine On
-RewriteBase /movies/
+RewriteBase /
 
 RewriteRule ^api/index\.php(?:/.*)?$ - [L]
 RewriteRule ^context\.txt$       - [L]

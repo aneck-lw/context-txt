@@ -6,7 +6,7 @@ Read-only JSON API for film data.
 
 ## Base path
 
-- `/movies/api`
+- `/api`
 
 ## Authentication
 
