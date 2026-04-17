@@ -154,6 +154,10 @@ A skill-based request works the same way:
 
 > Read https://context-txt.onrender.com/context.txt and follow the instructions in the skills file to show me hidden gems.
 
+If the agent does not apply the style guide automatically, a more explicit prompt works better:
+
+> Read https://context-txt.onrender.com/context.txt and https://context-txt.onrender.com/style/context.txt. Show me all sci-fi films from the 1980s with an IMDb score above 8.0 as a self-contained HTML page. Use the exact colours, badge design, and table layout from the style guide. Output only the HTML — no explanation or commentary.
+
 ---
 
 ## Real-world scenario
