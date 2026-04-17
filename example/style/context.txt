@@ -1,0 +1,65 @@
+# Movie Database — Presentation Style
+
+These are defaults for rendering film data for a human reader. The user may
+always ask for changes to layout, colour, or style.
+
+[← Movie Database](../context.txt)
+
+## Colours
+
+| Role             | Hex       |
+|---|---|
+| Page background  | `#0d0d0d` |
+| Surface          | `#181818` |
+| Border           | `#282828` |
+| Primary text     | `#f0f0f0` |
+| Muted text       | `#777777` |
+| Accent           | `#e8c84a` |
+
+## Typography
+
+- Font: system-ui, sans-serif
+- Base size: 14px
+- Title / heading: uppercase, letter-spacing 0.08em, accent colour
+
+## Genre badges
+
+Render genre as a small coloured badge. Use the exact colours below.
+
+| Genre       | Text      | Background | Border    |
+|---|---|---|---|
+| `sci-fi`    | `#5aabcf` | `#0d1e28`  | `#1a3040` |
+| `action`    | `#d4722a` | `#28140a`  | `#401f0f` |
+| `crime`     | `#c44040` | `#200808`  | `#381010` |
+| `comedy`    | `#9abf3a` | `#1c2808`  | `#2e3e10` |
+| `horror`    | `#c03040` | `#1c0408`  | `#300610` |
+| `animation` | `#3abfb8` | `#081e1c`  | `#103030` |
+| `drama`     | `#9a5abf` | `#160828`  | `#241040` |
+
+## Score colour coding
+
+Colour the IMDb score value to indicate quality at a glance.
+
+| Range  | Colour    |
+|---|---|
+| 9.0 +  | `#e8c84a` |
+| 8.0–8.9| `#6abf6a` |
+| 7.0–7.9| `#5aabcf` |
+| < 7.0  | `#888888` |
+
+## Standard table layout
+
+Default column order when showing a list of films:
+
+| # | Column       | Notes                                 |
+|---|---|---|
+| 1 | Title        | Bold, primary text colour             |
+| 2 | Year         | Muted text, right-aligned             |
+| 3 | Director     | Normal weight                         |
+| 4 | Genre        | Render as badge                       |
+| 5 | Score        | Colour-coded per score table above    |
+| 6 | Runtime      | Minutes, muted text, e.g. `148 min`   |
+| 7 | Tags         | Small plain badges, muted style       |
+| 8 | Language     | Only include if showing non-English   |
+
+Omit the Language column when all results are in the same language.

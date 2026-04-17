@@ -1,0 +1,23 @@
+# Movie Database
+
+A curated database of 80 well-known films spanning science fiction, action,
+crime, comedy, horror, animation, and drama. Data covers title, year, director,
+runtime, genre, tags, IMDb score, language, and a one-sentence synopsis.
+
+## What you will find here
+
+For each film the database holds:
+
+- **Identity** — title, slug, year, director, runtime (minutes)
+- **Classification** — genre (one primary genre), tags (array of descriptors)
+- **Rating** — IMDb score (float, 0.0–10.0)
+- **Origin** — language, country of production
+- **Synopsis** — one-sentence description
+
+## APIs
+
+- [Movie API](api/context.txt) — JSON API for querying and retrieving film data
+
+## Presentation
+
+- [Style guide](style/context.txt) — colours, typography, badge design, and standard table layout

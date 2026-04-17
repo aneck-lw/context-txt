@@ -1,0 +1,83 @@
+# Movie Database API
+
+Read-only JSON API for film data.
+
+[← Movie Database](../context.txt)
+
+## Base path
+
+- `/movies/api`
+
+## Authentication
+
+- **Required:** no
+
+## Endpoints
+
+### `GET /movies/api/movies`
+
+Returns a list of all films. All parameters are optional and can be combined.
+
+Parameters:
+
+- `genre` — exact match: `sci-fi`, `action`, `crime`, `comedy`, `horror`, `animation`, `drama`
+- `decade` — four-digit decade start, with or without trailing s: `1980s` or `1980`
+- `director` — case-insensitive partial match, e.g. `Villeneuve`, `Nolan`, `Miyazaki`
+- `min_score` — minimum IMDb score (float), e.g. `8.5`
+- `tag` — exact tag match (see tag list below)
+- `language` — exact match: `English`, `Japanese`, `Korean`, `German`, `French`, `Italian`, `Spanish`, `Portuguese`, `Indonesian`
+- `q` — search in title and synopsis (case-insensitive)
+- `sort` — sort field: `year` (default), `title`, `imdb_score`, `runtime`
+- `order` — `asc` (default) or `desc`
+
+Response fields:
+
+- `count` — integer, number of results
+- `filters` — object echoing the applied filters
+- `movies` — array of movie objects (see fields below)
+
+### `GET /movies/api/movies/{slug}`
+
+Returns full detail for one film.
+
+- `id` — integer
+- `slug` — URL-safe identifier, e.g. `blade-runner-2049`
+- `title` — string
+- `year` — integer
+- `director` — string (comma-separated for multiple directors)
+- `runtime` — integer, minutes
+- `genre` — string, one of the seven genres listed above
+- `tags` — array of strings
+- `imdb_score` — float
+- `language` — string
+- `country` — string
+- `synopsis` — string, one sentence
+
+## Available tags
+
+`space`, `dystopia`, `ai`, `robots`, `time-travel`, `cyberpunk`, `simulation`,
+`survival`, `isolation`, `cloning`, `near-future`, `science`, `desert`, `epic`,
+`linguistics`, `mystery`, `existential`, `heist`, `crime`, `gangster`,
+`serial-killer`, `thriller`, `cat-and-mouse`, `hostage`, `chase`, `revenge`,
+`assassin`, `martial-arts`, `superhero`, `coming-of-age`, `road-trip`,
+`time-loop`, `zombie`, `satire`, `dark-comedy`, `nonlinear`, `psychological`,
+`surreal`, `absurd`, `philosophical`, `political`, `surveillance`, `paranoia`,
+`supernatural`, `slasher`, `creature`, `family`, `romance`, `war`, `period`,
+`based-on-true-story`, `historical`, `submarine`, `cold-war`, `medieval`,
+`music`, `obsession`, `ambition`, `greed`, `hope`, `prison`, `courtroom`,
+`moral`, `fantasy`, `mythology`, `nature`, `adventure`, `memory`, `melancholy`,
+`ensemble`, `workplace`, `christmas`, `jungle`, `class-satire`, `dark-fairy-tale`
+
+## Error responses
+
+- `404` — resource not found
+- `405` — method not allowed (only GET is supported)
+- `429` — rate limited
+
+## Rate limiting
+
+- 60 requests per minute per IP
+
+## Cache behaviour
+
+- `Cache-Control: public, max-age=3600`

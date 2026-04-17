@@ -1,0 +1,14 @@
+Options -Indexes
+RewriteEngine On
+RewriteBase /movies/
+
+RewriteRule ^api/index\.php(?:/.*)?$ - [L]
+RewriteRule ^context\.txt$       - [L]
+RewriteRule ^api/context\.txt$   - [L]
+RewriteRule ^style/context\.txt$ - [L]
+RewriteRule ^movies\.json$       - [F,L]
+
+RewriteRule ^movie/([a-z0-9-]+)/?$ movie.php?slug=$1 [L,QSA]
+
+RewriteRule ^api/?$     api/index.php     [QSA,L]
+RewriteRule ^api/(.*)$  api/index.php/$1  [QSA,L]
