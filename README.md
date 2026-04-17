@@ -136,17 +136,23 @@ For sites that offer both an HTTP API and an MCP server, `context.txt` can list 
 
 ---
 
+## Live demo
+
+A working reference implementation is available at **https://context-txt.onrender.com**.
+
+It is a movie database with a read-only JSON API, a browser list view, and a full style guide — all described via `context.txt`. The source is in the `example/` folder of this repo.
+
 ## Example prompt
 
 A user pointing an AI agent at a site with `context.txt` needs no technical knowledge of the API. A natural-language request is enough:
 
-> Read context.txt at http://example.com/context.txt, then show me all sci-fi films from the 1980s with an IMDb score above 8, styled as a table using the site's own style guide.
+> Read the context.txt at https://context-txt.onrender.com/context.txt — then show me all sci-fi films from the 1980s with an IMDb score above 8.0, rendered as a styled table using the site's own style guide.
 
 The agent reads the root `context.txt` to understand the site, follows the link to `api/context.txt` to learn the available filters, calls the API, then reads `style/context.txt` to render the results in the site's colours and layout — all without the user explaining any of it.
 
-The same pattern works for more open-ended requests:
+A skill-based request works the same way:
 
-> Using context.txt at http://example.com/context.txt, find me the highest-rated animated films and present them nicely.
+> Read https://context-txt.onrender.com/context.txt and follow the instructions in the skills file to show me hidden gems.
 
 ---
 
