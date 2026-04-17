@@ -18,6 +18,10 @@ For each film the database holds:
 
 - [Movie API](api/context.txt) — JSON API for querying and retrieving film data
 
+## Skills
+
+- [Skills](skills/context.txt) — reusable task patterns: top-picks by genre, hidden gems
+
 ## Presentation
 
 - [Style guide](style/context.txt) — colours, typography, badge design, and standard table layout

@@ -1,0 +1,27 @@
+# Movie Database — Skills
+
+Reusable task patterns for working with the Movie Database API from an AI agent.
+
+[← Movie Database](../context.txt)
+
+## top-picks
+
+Show the highest-rated films in a given genre.
+
+**Trigger:** user asks for "best [genre] films", "top rated [genre]", "recommend me some [genre] movies", or similar.
+
+**Steps:**
+1. If no genre is specified, ask: *"Which genre? sci-fi · action · crime · comedy · horror · animation · drama"*
+2. Call `GET /api/movies?genre={genre}&sort=imdb_score&order=desc`
+3. Present the results as a table following the style guide — columns: Title, Year, Director, Score, Runtime
+
+## hidden-gems
+
+Surface well-regarded films that tend to be overlooked.
+
+**Trigger:** user asks for "hidden gems", "underrated films", "something less obvious", or "what should I watch that isn't the usual blockbusters".
+
+**Steps:**
+1. Call `GET /api/movies?min_score=7.4&sort=imdb_score&order=asc`
+2. Exclude films with a score of 8.5 or above — those are widely known
+3. Present as a table — columns: Title, Year, Genre, Score, Synopsis

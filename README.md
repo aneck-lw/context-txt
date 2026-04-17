@@ -81,6 +81,8 @@ The root `context.txt` is a navigation hub. It links to sub-files for APIs, site
 /context.txt                ← start here: what is this site
 /api/context.txt            ← how to query the data
 /style/context.txt          ← how to render the results
+/skills/context.txt         ← reusable task patterns for common queries
+/mcp/context.txt            ← MCP server endpoint and available tools
 /blog/context.txt           ← what is in the blog section
 ```
 
@@ -108,6 +110,32 @@ This means a user asking *"show me all sci-fi films from the 80s"* gets a table 
 
 ---
 
+## Skills
+
+A `skills/context.txt` describes reusable task patterns an AI agent can follow when working with the site. Each skill defines a trigger — the kind of user request it handles — and a sequence of steps: which API calls to make and how to present the results.
+
+Skills bridge the gap between a natural-language request and the API calls needed to fulfil it, without the user needing to know anything about the API structure.
+
+```
+/skills/context.txt    ← named task patterns for common queries
+```
+
+The [movie example](example/skills/context.txt) includes two skills: `top-picks` (highest-rated films by genre) and `hidden-gems` (well-regarded but lesser-known films).
+
+---
+
+## MCP
+
+A `mcp/context.txt` advertises an MCP server the site provides. Instead of describing HTTP endpoints for an agent to call manually, it points directly to a structured tool interface — endpoint URL, available tools, and authentication.
+
+```
+/mcp/context.txt       ← MCP server URL, tools, and auth
+```
+
+For sites that offer both an HTTP API and an MCP server, `context.txt` can list both. The agent chooses the most appropriate interface for the task.
+
+---
+
 ## Example prompt
 
 A user pointing an AI agent at a site with `context.txt` needs no technical knowledge of the API. A natural-language request is enough:
@@ -119,6 +147,41 @@ The agent reads the root `context.txt` to understand the site, follows the link 
 The same pattern works for more open-ended requests:
 
 > Using context.txt at http://example.com/context.txt, find me the highest-rated animated films and present them nicely.
+
+---
+
+## Real-world scenario
+
+A museum archive is a typical use case for `context.txt` at full depth. The same standard covers both the public-facing data layer and the private editorial backend.
+
+**Public layer** — visitors, researchers, and journalists interact with the collection through AI:
+
+```
+/context.txt                   ← site overview: what the museum holds, what data is available
+/collections/api/context.txt   ← search artworks, artefacts, and archive documents
+/events/api/context.txt        ← exhibitions, tours, and public programmes
+/news/api/context.txt          ← press releases and announcements
+/skills/context.txt            ← common tasks: find works by artist, list current exhibitions
+/mcp/context.txt               ← MCP server for direct structured access to the collection
+/style/context.txt             ← museum visual identity for rendered output
+```
+
+**Private layer** (behind authentication) — curators and editors manage content through AI:
+
+```
+/private/context.txt               ← 401 without credentials
+/private/cms/api/context.txt       ← CMS write API: create, update, publish
+/private/skills/context.txt        ← editorial workflows: add exhibition, publish news article
+/private/mcp/context.txt           ← MCP server with write access to the CMS
+```
+
+A single prompt is enough for either layer:
+
+> Using context.txt at museum.example.com/context.txt, show me all currently running exhibitions with their opening hours.
+
+> Using context.txt at museum.example.com/context.txt, add next month's sculpture exhibition to the events calendar and publish a news announcement.
+
+The agent reads the root context, discovers the right layer based on credentials, loads the relevant skills, and completes the task — without the user knowing anything about the underlying APIs or CMS.
 
 ---
 
@@ -160,4 +223,5 @@ Feedback, issues, and pull requests are welcome.
 | `example/movie.php` | Browser detail view — single film page |
 | `example/context.txt` | Root context file for the example site |
 | `example/api/context.txt` | API context file describing all endpoints and filters |
+| `example/skills/context.txt` | Skills — top-picks by genre, hidden gems |
 | `example/style/context.txt` | Style guide — colours, badges, and table layout |
