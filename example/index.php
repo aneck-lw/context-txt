@@ -56,41 +56,41 @@ $all_genres = ['sci-fi','action','crime','comedy','horror','animation','drama'];
     body { font-family: system-ui, sans-serif; background: #0d0d0d; color: #f0f0f0; min-height: 100vh; padding: 2rem; }
 
     h1 { font-size: 1rem; font-weight: 700; text-transform: uppercase; letter-spacing: .1em; color: #e8c84a; margin-bottom: .3rem; }
-    .subtitle { font-size: .78rem; color: #555; margin-bottom: 1.8rem; }
-    .subtitle a { color: #444; text-decoration: none; }
-    .subtitle a:hover { color: #666; }
+    .subtitle { font-size: .78rem; color: #999; margin-bottom: 1.8rem; }
+    .subtitle a { color: #888; text-decoration: none; }
+    .subtitle a:hover { color: #bbb; }
 
     .filters { display: flex; flex-wrap: wrap; gap: .4rem; align-items: center; margin-bottom: 1.2rem; }
-    .genre-btn { font-size: .68rem; padding: .28rem .65rem; border-radius: 3px; border: 1px solid #2a2a2a; background: #181818; color: #666; cursor: pointer; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
-    .genre-btn:hover { border-color: #444; color: #999; }
+    .genre-btn { font-size: .68rem; padding: .28rem .65rem; border-radius: 3px; border: 1px solid #383838; background: #181818; color: #aaa; cursor: pointer; font-weight: 600; text-transform: uppercase; letter-spacing: .05em; }
+    .genre-btn:hover { border-color: #555; color: #ddd; }
     .search-wrap { display: flex; gap: .4rem; align-items: center; margin-left: .4rem; }
-    .search-box { font-size: .8rem; padding: .3rem .6rem; border-radius: 3px; border: 1px solid #2a2a2a; background: #181818; color: #f0f0f0; outline: none; width: 180px; }
-    .search-box:focus { border-color: #444; }
-    .search-btn { font-size: .72rem; padding: .3rem .65rem; border-radius: 3px; border: 1px solid #333; background: #222; color: #aaa; cursor: pointer; }
-    .clear-link { font-size: .75rem; color: #444; text-decoration: none; margin-left: .3rem; }
-    .clear-link:hover { color: #777; }
+    .search-box { font-size: .8rem; padding: .3rem .6rem; border-radius: 3px; border: 1px solid #383838; background: #181818; color: #f0f0f0; outline: none; width: 180px; }
+    .search-box:focus { border-color: #666; }
+    .search-btn { font-size: .72rem; padding: .3rem .65rem; border-radius: 3px; border: 1px solid #444; background: #252525; color: #ccc; cursor: pointer; }
+    .clear-link { font-size: .75rem; color: #888; text-decoration: none; margin-left: .3rem; }
+    .clear-link:hover { color: #bbb; }
 
-    .count { font-size: .75rem; color: #444; margin-bottom: .8rem; }
-    .count strong { color: #888; font-weight: 500; }
+    .count { font-size: .75rem; color: #888; margin-bottom: .8rem; }
+    .count strong { color: #ccc; font-weight: 500; }
 
     table { width: 100%; border-collapse: collapse; }
-    thead th { text-align: left; font-size: .63rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #444; padding: .5rem .8rem; border-bottom: 2px solid #202020; white-space: nowrap; }
+    thead th { text-align: left; font-size: .63rem; font-weight: 700; text-transform: uppercase; letter-spacing: .08em; color: #777; padding: .5rem .8rem; border-bottom: 2px solid #282828; white-space: nowrap; }
     thead th a { color: inherit; text-decoration: none; }
-    thead th a:hover { color: #777; }
-    tbody tr { border-bottom: 1px solid #181818; }
-    tbody tr:hover { background: #141414; }
+    thead th a:hover { color: #bbb; }
+    tbody tr { border-bottom: 1px solid #1e1e1e; }
+    tbody tr:hover { background: #161616; }
     tbody td { padding: .5rem .8rem; vertical-align: middle; font-size: .82rem; }
 
     .td-title a { font-weight: 600; color: #f0f0f0; text-decoration: none; }
     .td-title a:hover { color: #e8c84a; }
-    .td-year { color: #555; font-size: .78rem; white-space: nowrap; text-align: right; }
-    .td-director { color: #bbb; }
+    .td-year { color: #888; font-size: .78rem; white-space: nowrap; text-align: right; }
+    .td-director { color: #ccc; }
     .td-score { font-weight: 700; white-space: nowrap; }
-    .td-runtime { color: #555; font-size: .75rem; white-space: nowrap; text-align: right; }
+    .td-runtime { color: #888; font-size: .75rem; white-space: nowrap; text-align: right; }
     .td-tags { line-height: 1.9; }
 
     .badge { display: inline-block; font-size: .65rem; padding: .13rem .45rem; border-radius: 3px; font-weight: 700; text-transform: uppercase; letter-spacing: .04em; border: 1px solid; }
-    .tag { display: inline-block; font-size: .63rem; padding: .1rem .38rem; border-radius: 3px; color: #555; background: #181818; border: 1px solid #242424; margin: .1rem .1rem .1rem 0; }
+    .tag { display: inline-block; font-size: .63rem; padding: .1rem .38rem; border-radius: 3px; color: #999; background: #1e1e1e; border: 1px solid #333; margin: .1rem .1rem .1rem 0; }
   </style>
 </head>
 <body>

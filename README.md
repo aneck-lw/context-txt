@@ -29,23 +29,24 @@ An AI agent reading it immediately knows what your site is, where your APIs are,
 ## Minimal example
 
 ```markdown
-# My Recipe Site
+# Movie Database
 
-A database of vegetarian recipes with nutritional information.
+A curated database of 80 well-known films spanning science fiction, action,
+crime, comedy, horror, animation, and drama.
 
 ## APIs
 
-- [Recipe API](api/context.txt) — search and retrieve recipes by ingredient, cuisine, or dietary tag
+- [Movie API](api/context.txt) — search and retrieve films by genre, decade, director, score, or tag
 ```
 
 And `api/context.txt`:
 
 ```markdown
-# Recipe API
+# Movie Database API
 
-Read-only JSON API for recipe data.
+Read-only JSON API for film data.
 
-[← My Recipe Site](../context.txt)
+[← Movie Database](../context.txt)
 
 ## Base path
 
@@ -57,13 +58,13 @@ Read-only JSON API for recipe data.
 
 ## Endpoints
 
-### `GET /api/recipes`
+### `GET /api/movies`
 
-Returns a list of recipes. Supports `?cuisine=`, `?tag=`, and `?ingredient=` filters.
+Returns a list of films. Supports `?genre=`, `?decade=`, `?director=`, `?min_score=`, `?tag=`, `?language=`, and `?q=` filters.
 
-### `GET /api/recipes/{slug}`
+### `GET /api/movies/{slug}`
 
-Returns full detail for one recipe including ingredients, steps, and nutrition.
+Returns full detail for one film including synopsis, tags, runtime, and IMDb score.
 
 ## Rate limiting
 
@@ -103,7 +104,21 @@ For sites where even the API structure is sensitive, `context.txt` itself can be
 
 A `style/context.txt` gives AI agents a visual starting point when rendering data for a human. Colours, typography, badge design, table layout — the site owner defines the defaults, and the user can always ask for changes.
 
-This means a user asking *"show me all fast teams"* gets a table that looks like it belongs on the site, not whatever default styles the AI invents.
+This means a user asking *"show me all sci-fi films from the 80s"* gets a table that looks like it belongs on the site, not whatever default styles the AI invents.
+
+---
+
+## Example prompt
+
+A user pointing an AI agent at a site with `context.txt` needs no technical knowledge of the API. A natural-language request is enough:
+
+> Read context.txt at http://example.com/context.txt, then show me all sci-fi films from the 1980s with an IMDb score above 8, styled as a table using the site's own style guide.
+
+The agent reads the root `context.txt` to understand the site, follows the link to `api/context.txt` to learn the available filters, calls the API, then reads `style/context.txt` to render the results in the site's colours and layout — all without the user explaining any of it.
+
+The same pattern works for more open-ended requests:
+
+> Using context.txt at http://example.com/context.txt, find me the highest-rated animated films and present them nicely.
 
 ---
 
@@ -117,8 +132,6 @@ This means a user asking *"show me all fast teams"* gets a table that looks like
 | OpenAPI | Full REST API description | context.txt is a lightweight entry point; can reference an OpenAPI spec |
 
 context.txt is **complementary** to these standards, not a replacement. A site can have `llms.txt` for content navigation and `context.txt` for API-oriented interaction.
-
----
 
 ---
 

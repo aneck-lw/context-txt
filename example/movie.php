@@ -44,33 +44,33 @@ function score_color(float $s): string {
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     body { font-family: system-ui, sans-serif; background: #0d0d0d; color: #f0f0f0; min-height: 100vh; padding: 2rem; }
 
-    .back { font-size: .75rem; color: #444; text-decoration: none; display: inline-block; margin-bottom: 2rem; }
-    .back:hover { color: #777; }
+    .back { font-size: .75rem; color: #999; text-decoration: none; display: inline-block; margin-bottom: 2rem; }
+    .back:hover { color: #ccc; }
 
     .card { background: #181818; border: 1px solid #282828; border-radius: 4px; padding: 2rem; max-width: 680px; }
 
     .genre-badge { display: inline-block; font-size: .68rem; padding: .15rem .5rem; border-radius: 3px; font-weight: 700; text-transform: uppercase; letter-spacing: .05em; border: 1px solid; margin-bottom: 1rem; }
 
     h1 { font-size: 1.5rem; font-weight: 700; color: #f0f0f0; margin-bottom: .3rem; line-height: 1.2; }
-    .year-dir { font-size: .85rem; color: #666; margin-bottom: 1.5rem; }
+    .year-dir { font-size: .85rem; color: #999; margin-bottom: 1.5rem; }
 
     .meta-grid { display: grid; grid-template-columns: max-content 1fr; gap: .4rem 1.2rem; margin-bottom: 1.5rem; font-size: .82rem; }
-    .meta-label { color: #555; font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; padding-top: .1rem; }
-    .meta-value { color: #ccc; }
+    .meta-label { color: #888; font-size: .7rem; text-transform: uppercase; letter-spacing: .06em; padding-top: .1rem; }
+    .meta-value { color: #ddd; }
 
-    .synopsis { font-size: .9rem; color: #aaa; line-height: 1.6; margin-bottom: 1.5rem; }
+    .synopsis { font-size: .9rem; color: #ccc; line-height: 1.6; margin-bottom: 1.5rem; }
 
-    .tags-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: #444; margin-bottom: .5rem; }
-    .tag { display: inline-block; font-size: .68rem; padding: .15rem .45rem; border-radius: 3px; color: #555; background: #111; border: 1px solid #222; margin: .15rem .15rem .15rem 0; }
+    .tags-label { font-size: .68rem; text-transform: uppercase; letter-spacing: .08em; color: #888; margin-bottom: .5rem; }
+    .tag { display: inline-block; font-size: .68rem; padding: .15rem .45rem; border-radius: 3px; color: #999; background: #1e1e1e; border: 1px solid #333; margin: .15rem .15rem .15rem 0; }
 
-    .api-link { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #222; font-size: .75rem; color: #444; }
-    .api-link a { color: #555; text-decoration: none; font-family: monospace; }
-    .api-link a:hover { color: #888; }
+    .api-link { margin-top: 1.5rem; padding-top: 1.5rem; border-top: 1px solid #282828; font-size: .75rem; color: #888; }
+    .api-link a { color: #999; text-decoration: none; font-family: monospace; }
+    .api-link a:hover { color: #ccc; }
   </style>
 </head>
 <body>
 
-<a href="." class="back">← All films</a>
+<a href=".." class="back">← All films</a>
 
 <div class="card">
   <span class="genre-badge" style="color:<?= $t ?>;background:<?= $bg ?>;border-color:<?= $bd ?>"><?= htmlspecialchars($movie['genre']) ?></span>
